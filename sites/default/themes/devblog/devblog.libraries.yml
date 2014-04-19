@@ -1,0 +1,8 @@
+foundation:
+  version: VERSION
+  js:
+    javascripts/foundation/foundation.js: {}
+    javascripts/foundation/foundation.topbar.js: {}
+  dependencies:
+    - core/jquery
+    - core/modernizr

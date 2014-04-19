@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * Implements hook_page_alter().
+ */
+function devblog_page_alter(&$vars) {
+  $vars['#attached']['library'][] = 'devblog/foundation';
+}
+
+/**
+ * Implements hook_preprocess_links().
+ */
+function devblog_preprocess_links(&$vars, $hook) {
+  if ($hook == 'links__system_main_menu') {
+    $vars['attributes']['class'][0] = 'right';
+  }
+}
+
