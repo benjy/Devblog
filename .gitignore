@@ -1,0 +1,7 @@
+sites/*/settings*.php
+database.sql
+sites/*/files
+sites/*/private
+sites/simpletest
+sites/*/.sass-cache
+sites/*/.sass-cache/*
