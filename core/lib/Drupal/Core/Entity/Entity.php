@@ -145,6 +145,7 @@ abstract class Entity extends DependencySerialization implements EntityInterface
    */
   public function urlInfo($rel = 'canonical') {
     if ($this->isNew()) {
+      // @todo benjy: file a core issue for this.
       //throw new EntityMalformedException(sprintf('The "%s" entity type has not been saved, and cannot have a URI.', $this->getEntityTypeId()));
     }
 
