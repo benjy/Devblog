@@ -11,7 +11,7 @@ use Drupal\migrate\MigrateExecutable;
 use Drupal\migrate\Tests\MigrateTestBase;
 
 /**
- * Tests migration of variables from the Action module.
+ * Tests migration of wordpress posts.
  */
 class WordPressPostTest extends MigrateTestBase {
 
@@ -46,7 +46,7 @@ class WordPressPostTest extends MigrateTestBase {
   }
 
   /**
-   * Tests migration of action variables to action.settings.yml.
+   * Tests migration of WordPress posts.
    */
   public function testWordPressPosts() {
     $node = node_load(1);

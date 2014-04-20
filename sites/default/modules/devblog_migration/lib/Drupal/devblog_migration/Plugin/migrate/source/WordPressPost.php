@@ -13,25 +13,13 @@ use Drupal\migrate\Row;
 
 
 /**
- * Drupal 6 node source from database.
+ * Get the WordPress posts.
  *
  * @MigrateSource(
  *   id = "wp_post"
  * )
  */
-class WordPressPost extends SqlBase implements SourceEntityInterface {
-
-  /**
-   * {@inheritdoc}
-   */
-  public function query() {
-    // Get all the posts, post_type=post filters out revisions and pages.
-    $query = $this->select($this->configuration['table_prefix'] . 'posts', 'p')
-      ->fields('p', array_keys($this->fields()))
-      ->condition('post_type', 'post');
-
-    return $query;
-  }
+class WordPressPost extends WordPressPostBase implements SourceEntityInterface {
 
   public function prepareRow(Row $row) {
     $created = $row->getSourceProperty('post_date');
@@ -60,15 +48,6 @@ class WordPressPost extends SqlBase implements SourceEntityInterface {
       'post_type' => $this->t('The post type.'),
     );
     return $fields;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function getIds() {
-    $ids['ID']['type'] = 'integer';
-    $ids['ID']['alias'] = 'p';
-    return $ids;
   }
 
   /**
