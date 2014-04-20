@@ -1,1 +1,4 @@
 - wp_posts
+- wp_url_alias
+- wp_terms
+- wp_term_alias
