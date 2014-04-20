@@ -10,17 +10,16 @@ source:
     filter_format: full_html
     status: true
 process:
+  nid: ID
   type: constants.type
   uid: constants.uid
   promote: constants.promote
   status: constants.status
-
   title: post_title
   created: post_date
   changed: post_modified
   body.format: constants.filter_format
   body.value: post_content
-
 destination:
   plugin: entity:node
 
